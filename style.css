@@ -1,0 +1,142 @@
+/* Base font and color styling */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.main-header {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: left;
+}
+
+.subheading {
+  color: #c00;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: #c00;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #000;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 2px solid #c00;
+  color: #c00;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #c00;
+  color: #fff;
+}
+
+.link {
+  color: #c00;
+  text-decoration: none;
+  font-weight: bold;
+  align-self: center;
+  font-size: 1rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.exhibit-section {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.exhibit-section h2 {
+  color: #c00;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.exhibit-section p {
+  margin-bottom: 1rem;
+}
+
+blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+.media-placeholder {
+  background: #eee;
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.tech-section {
+  background: #f9f9f9;
+  padding: 3rem 1.5rem;
+  margin-top: 4rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tech-section h2 {
+  color: #c00;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.tech-section ul {
+  padding-left: 1.2rem;
+  color: #333;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+  background: #fafafa;
+  margin-top: 4rem;
+}
+

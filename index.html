@@ -1,1 +1,89 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>Ireton Liu | Computer Science Student</title><link href="/css/app.52a3297b.css" rel="preload" as="style"><link href="/js/app.cffc8bbc.js" rel="preload" as="script"><link href="/js/chunk-vendors.05d824af.js" rel="preload" as="script"><link href="/css/app.52a3297b.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but personal_website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/js/chunk-vendors.05d824af.js"></script><script src="/js/app.cffc8bbc.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Exhibit | ICRC Museum</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<script type="importmap">
+{
+    "imports": {
+        "three": "./lib/three.module.js",
+        "gaussian-splats-3d": "./lib/gaussian-splats-3d.module.js"
+    }
+}
+</script>
+<body>
+  <header class="main-header">
+    <p class="subheading">VIRTUAL EXHIBITION</p>
+    <h1 class="title">THE HUMANITARIAN ADVENTURE<br><span class="subtitle">IN PHOTOREALISTIC DETAIL</span></h1>
+    <p class="description">
+      Step inside the International Red Cross and Red Crescent Museum like never before — through immersive, photorealistic 3D reconstructions.
+    </p>
+    <div class="buttons">
+      <a href="#section1" class="btn">Begin the Journey →</a>
+      <a href="#map" class="link">Explore the Map →</a>
+    </div>
+  </header>
+
+  <section id="section1" class="exhibit-section">
+    <h2>This is an Awesome Mug</h2>
+    <p>
+        Experience the ICRC's humanitarian work through the lens of a coffee mug. This exhibit showcases the daily lives of field workers, their challenges, and their triumphs in conflict zones.
+    </p>
+    <blockquote>
+        "In the field, every sip of coffee is a reminder of home, a moment of pause amidst chaos." — ICRC Field Worker
+    </blockquote>
+    <div class="canvas-container" id="canvas-container"> 
+
+      <script type="module" src="js/main.js"></script>
+        <script type="module">
+            import { viewSplat } from './js/main.js';
+
+        viewSplat();
+      </script>
+    </div>
+
+  </section>
+
+  <section class="exhibit-section">
+    <h2>Restoring Dignity</h2>
+    <p>
+      View a recreated prison cell from a detention center in Latin America, showing the conditions monitored by ICRC delegates.
+    </p>
+    <blockquote>
+      "You don’t see the sun, but sometimes, you hear a song from the outside world." — anonymous detainee, 2016
+    </blockquote>
+    <div class="media-placeholder">[3D Viewer Placeholder]</div>
+  </section>
+
+  <section class="exhibit-section">
+    <h2>Reuniting Families</h2>
+    <p>
+      Examine the reconstruction of a tracing office — documents, radios, and photos scattered on desks — part of the family reunification process.
+    </p>
+    <div class="media-placeholder">[3D Viewer Placeholder]</div>
+  </section>
+
+  <section id="map" class="tech-section">
+    <h2>Behind the Scenes: Documenting Reality</h2>
+    <p>
+      This project uses Neural Radiance Fields (NeRF), Structure-from-Motion (SfM) and 3D Gaussian Splatting (3DGS) photogrammetry to recreate museum spaces in exquisite detail.
+    </p>
+    <ul>
+      <li>DSLR photo scans (~500–1500 photos per exhibit)</li>
+      <li>COLMAP</li>
+      <li>NerfStudio</li>
+      <li>Three.js WebGL viewer</li>
+      <li>Gaussian Splatting 3D</li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Virtual Exhibit Project</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+

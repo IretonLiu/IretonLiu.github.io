@@ -285,7 +285,8 @@ function runViewer(splatBufferData, format, alphaRemovalThreshold, cameraUpArray
     'antialiased': antialiased || false,
     'splatRenderMode': sceneIs2D ? GaussianSplats3D.SplatRenderMode.TwoD : GaussianSplats3D.SplatRenderMode.ThreeD,
     'sphericalHarmonicsDegree': sphericalHarmonicsDegree,
-     'rootElement': rootElement,
+    'rootElement': rootElement,
+    'sharedMemoryForWorkers': false,
   };
   const splatBufferOptions = {
     'splatAlphaRemovalThreshold': alphaRemovalThreshold

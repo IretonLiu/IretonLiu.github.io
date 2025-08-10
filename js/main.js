@@ -218,7 +218,9 @@ export async function viewSplat() {
 
 
     // read the file
-   const path = '../cern_mug.ply';
+    const path = '../cern_mug.ply';
+    //const path = '../light_poster.ply';
+    //
     const format = GaussianSplats3D.SceneFormat.Ply;
         const response = await fetch(path);
     if (!response.ok) {

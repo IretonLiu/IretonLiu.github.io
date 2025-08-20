@@ -1,103 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtual Exhibit | ICRC Museum</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<script type="importmap">
-{
-    "imports": {
-        "three": "./lib/three.module.js",
-        "gaussian-splats-3d": "./lib/gaussian-splats-3d.module.js"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Henry Dunant 3D Model - ICRC Virtual Exhibit</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: white;
+        color: #d40000;
+      }
+      header {
+        border-bottom: 1px solid #d40000;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header h1 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: normal;
+      }
+      nav a {
+        margin-left: 1rem;
+        text-decoration: none;
+        color: #d40000;
+        font-size: 0.9rem;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+      }
+      h2 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        max-width: 600px;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      #canvas-container {
+        width: 80vw;
+        height: 60vh;
+        border: 1px solid #d40000;
+      }
+      footer {
+        border-top: 1px solid #d40000;
+        padding: 1rem;
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: 2rem;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/examples/js/controls/OrbitControls.js"></script>
+  </head>
+  <script type="importmap">
+    {
+      "imports": {
+        "gaussian-splats-3d": "./lib/gaussian-splats-3d.module.js",
+        "three": "./lib/three/build/three.module.js",
+        "three/addons/": "./lib/three/examples/jsm/",
+        "three/nodes": "./lib/three/examples/jsm/nodes/Nodes.js"
+      }
     }
-}
-</script>
-<body>
-  <header class="main-header">
-    <p class="subheading">VIRTUAL EXHIBITION</p>
-    <svg width="67" height="33" viewBox="0 0 68 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="block w-auto h-[30px] md:h-[33px]">
-        <path d="M55.2087 0.944822C54.5018 0.347194 52.6747 0.00570679 50.7636 0.00570679C41.6544 0.00570679 34.2697 7.39042 34.2697 16.5C34.2697 25.6096 41.6544 32.9943 50.7636 32.9943C52.6747 32.9943 54.5018 32.6527 56.2087 32.0551C62.6388 29.8036 67.258 23.6986 67.258 16.5C67.258 9.3014 62.6388 3.19634 56.2087 0.944822ZM55.8814 31.1202C54.9863 31.4359 54.0092 31.5211 53.0556 31.3928C47.7907 30.7173 43.5073 24.0364 43.5073 16.5C43.5073 8.96358 47.7907 2.28256 53.0588 1.60668C54.009 1.47884 54.9886 1.56457 55.8814 1.8797C69.6556 6.76676 69.6488 26.2375 55.8814 31.1202Z" fill="#DC0000"></path>
-        <path d="M22.6358 0.485443H12.1891V32.5142H23.6358V0.485443Z" fill="#DC0000"></path>
-        <path d="M10.1983 11.4912H0.741699V21.4965H11.1983V11.4912Z" fill="#DC0000"></path>
-        <path d="M32.2795 16.4989C33.2795 14.7581 33.5431 13.0792 34.0189 11.4912H24.6263V21.4965H34.0163C33.5425 19.9114 33.2795 18.236 33.2795 16.4989Z" fill="#DC0000"></path>
-    </svg>
-    <h1 class="title">THE HUMANITARIAN ADVENTURE<br><span class="subtitle">IN PHOTOREALISTIC DETAIL</span></h1>
+  </script>
+  <body>
+    <header>
+      <h1>FOR THE HENRY DUNANT SOCIETY</h1>
+      <nav>
+        <a href="#">Exhibitions</a>
+        <a href="#">Agenda</a>
+        <a href="#">Practical Info</a>
+        <a href="#">About</a>
+      </nav>
+    </header>
 
-    <p class="description">
-      Step inside the International Red Cross and Red Crescent Museum like never before — through immersive, photorealistic 3D reconstructions.
-    </p>
-    <div class="buttons">
-      <a href="#section1" class="btn">Begin the Journey →</a>
-      <a href="#map" class="link">Explore the Map →</a>
-    </div>
-  </header>
+    <main>
+      <h2>Henry Dunant - 3D Model</h2>
+      <p>
+        Explore the 3D model of Henry Dunant, founder of the Red Cross. Rotate,
+        zoom, and interact to discover this digital representation, created as
+        part of the ICRC virtual exhibit.
+      </p>
+      <div id="canvas-container"></div>
+    </main>
 
-  <section id="section1" class="exhibit-section">
-    <div class="canvas-container" id="canvas-container"> 
+    <footer>© 2025 International Red Cross and Red Crescent Museum</footer>
 
-      <script type="module" src="js/main.js"></script>
-        <script type="module">
-            import { viewSplat } from './js/main.js';
-            import { addExpandButton } from './js/utils/utils.js'; 
-            // Add fullscreen button after viewSplat() runs
+    <script type="module" src="src/showcase.js"></script>
+    <script type="module">
+      import { viewSplat } from "./src/showcase.js";
+      import { addExpandButton } from "./src/utils/utils.js";
+      // Add fullscreen button after viewSplat() runs
 
-            const rootElement = document.getElementById('canvas-container');
-            addExpandButton(rootElement);
+      const rootElement = document.getElementById("canvas-container");
 
-            viewSplat();
-      </script>
-      
-    </div>
-
-    <h2>THIS IS AN AWESOME MUG</h2>
-    <p>
-        Experience the ICRC's humanitarian work through the lens of a coffee mug. This exhibit showcases the daily lives of field workers, their challenges, and their triumphs in conflict zones.
-    </p>
-    <blockquote>
-        "In the field, every sip of coffee is a reminder of home, a moment of pause amidst chaos." — ICRC Field Worker
-    </blockquote>
-
-  </section>
-
-  <section class="exhibit-section">
-    <h2>Restoring Dignity</h2>
-    <p>
-      View a recreated prison cell from a detention center in Latin America, showing the conditions monitored by ICRC delegates.
-    </p>
-    <blockquote>
-      "You don’t see the sun, but sometimes, you hear a song from the outside world." — anonymous detainee, 2016
-    </blockquote>
-    <div class="media-placeholder">[3D Viewer Placeholder]</div>
-  </section>
-
-  <section class="exhibit-section">
-    <h2>Reuniting Families</h2>
-    <p>
-      Examine the reconstruction of a tracing office — documents, radios, and photos scattered on desks — part of the family reunification process.
-    </p>
-    <div class="media-placeholder">[3D Viewer Placeholder]</div>
-  </section>
-
-  <section id="map" class="tech-section">
-    <h2>Behind the Scenes: Documenting Reality</h2>
-    <p>
-      This project uses Neural Radiance Fields (NeRF), Structure-from-Motion (SfM) and 3D Gaussian Splatting (3DGS) photogrammetry to recreate museum spaces in exquisite detail.
-    </p>
-    <ul>
-      <li>DSLR photo scans (~500–1500 photos per exhibit)</li>
-      <li>COLMAP</li>
-      <li>NerfStudio</li>
-      <li>Three.js WebGL viewer</li>
-      <li>Gaussian Splatting 3D</li>
-    </ul>
-  </section>
-
-  <footer class="footer">
-    <p>© 2025 Virtual Exhibit Project</p>
-  </footer>
-</body>
+      viewSplat(rootElement);
+    </script>
+  </body>
 </html>
-<!DOCTYPE html>
-
